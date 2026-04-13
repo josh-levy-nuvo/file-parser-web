@@ -1,7 +1,6 @@
 {
   "functions": {
     "api/batch.py": {
-      "runtime": "python3.9",
       "maxDuration": 10,
       "includeFiles": "xlsx_parser/**"
     }
