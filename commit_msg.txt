@@ -1,0 +1,12 @@
+feat: initial file-parser-web scaffold
+
+- Next.js 14 + TypeScript + Tailwind frontend
+- Password-protected login with JWT cookie (jose)
+- Upload page: zip upload, benefits textarea, dry-run preview table
+- Batch processor: client-side JSZip extraction, 30-file batches
+- Python serverless API: auth + batch (openpyxl in-memory)
+- Audit log built client-side, auto-downloaded with cleaned zip
+- Middleware protecting /upload and /api/batch routes
+- vercel.json configured for Python 3.12 runtime
+
+Co-Authored-By: AdaL <adal@sylph.ai>
