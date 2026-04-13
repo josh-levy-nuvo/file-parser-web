@@ -1,5 +1,5 @@
 """
-parser/sheet_cleaner.py (web version)
+xlsx_parser/sheet_cleaner.py (web version)
 In-memory xlsx tab cleaner — no file I/O.
 """
 

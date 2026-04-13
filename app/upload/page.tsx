@@ -13,10 +13,6 @@ import {
 
 type Stage = "idle" | "extracting" | "dry_running" | "previewing" | "processing" | "done" | "error";
 
-function fmt(d: Date) {
-  return d.toISOString().replace("T", " ").slice(0, 19);
-}
-
 function StatusBadge({ status }: { status: FileResult["status"] }) {
   const styles = {
     ok:      "bg-green-900 text-green-300",
@@ -38,7 +34,6 @@ export default function UploadPage() {
   const [progress, setProgress]       = useState<BatchProgress | null>(null);
   const [dryResults, setDryResults]   = useState<FileResult[]>([]);
   const [error, setError]             = useState("");
-  const [startTime, setStartTime]     = useState<Date | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const benefitList = benefits
@@ -55,7 +50,6 @@ export default function UploadPage() {
     if (!zipFile || benefitList.length === 0) return;
     setError("");
     setStage("extracting");
-    setStartTime(new Date());
     try {
       const files = await extractZip(zipFile);
       setStage("dry_running");
@@ -73,7 +67,6 @@ export default function UploadPage() {
     setError("");
     setStage("extracting");
     const procStart = new Date();
-    setStartTime(procStart);
     try {
       const files = await extractZip(zipFile);
       setStage("processing");

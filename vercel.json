@@ -1,8 +1,9 @@
 {
   "functions": {
-    "api/*.py": {
-      "runtime": "python3.12",
-      "maxDuration": 10
+    "api/batch.py": {
+      "runtime": "python3.9",
+      "maxDuration": 10,
+      "includeFiles": "xlsx_parser/**"
     }
   },
   "framework": "nextjs"

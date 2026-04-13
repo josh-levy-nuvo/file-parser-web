@@ -1,0 +1,11 @@
+fix: resolve Vercel deployment failures
+
+- python3.12 -> python3.9 (Hobby runtime support)
+- Rewrite api/batch.py to use BaseHTTPRequestHandler (correct Vercel format)
+- Rename parser/ -> xlsx_parser/ (avoid stdlib conflict), add __init__.py
+- Add includeFiles to vercel.json to bundle xlsx_parser with function
+- Remove python-jose dependency (use stdlib hmac for JWT verification)
+- Remove redundant api/auth.py (TypeScript route handles auth)
+- Remove unused fmt() and startTime state (ESLint no-unused-vars)
+
+Co-Authored-By: AdaL <adal@sylph.ai>
